@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content {% if page.no-padding %}no-padding{% endif %}" aria-label="Content">
+      <div class="wrapper {% if page.full-width %}wrapper--full-width{% endif %}">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

@@ -1,0 +1,132 @@
+---
+---
+$pink:  #f273ed;
+$blue:  #7388f2;
+$white: #ffffff;
+$black: #000000;
+
+.no-padding {
+  padding:0;
+}
+
+.wrapper {
+  width:75%;
+  max-width:800px;
+  position:relative;
+
+  &--full-width {
+    width: 100%;
+    max-width: none;
+    padding:0;
+  }
+}
+
+.vertical-text {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+
+  /* only currently works in Blink/WebKit */
+  -webkit-text-orientation: upright;
+  -moz-text-orientation: upright;
+  -ms-text-orientation: upright;
+  text-orientation: upright;
+
+  /* Sets upright orientation for the Z */
+  -ms-text-combine-horizontal: all;
+}
+
+.h1 {
+  font-weight:bolder;
+  font-size:6.66em;
+
+  &--vertical-text {
+    letter-spacing: -0.2em;
+  }
+}
+
+.home_splash {
+  background-color:$blue;
+  color:white;
+  height:77vh;
+  position:relative;
+  overflow:hidden;
+  margin-bottom:120px;
+
+  &--header-wrap {
+      width: 773px;
+      position: relative;
+      height: 626px;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+
+  .h1 {
+    margin:0;
+    position:absolute;
+  }
+
+  &--hr-heading {
+    top:50%;
+    left:0;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%);
+    letter-spacing:0.2em;
+  }
+
+  &--jekyll-heading {
+    top: -60px;
+    left: 328px;
+  }
+
+  .whitespace {
+    display:none;
+  }
+
+  &::before, &::after  {
+    content:'';
+    background-color:transparent;
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    border:100vw solid transparent;
+    border-color:transparent transparent transparent $pink;
+  }
+
+  &::after {
+    left:50vw;
+    border-color: $pink transparent transparent transparent;
+  }
+}
+
+.posts {
+  position:relative;
+
+  &_heading {
+    position:absolute;
+    top:0;
+    right:0;
+    -webkit-transform:translateX(100%);
+    transform:translateX(100%);
+  }
+
+  &_list {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+  }
+
+  &_post-in-list {
+    width:48%;
+    margin:0 0 33px 0;
+  }
+}

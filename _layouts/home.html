@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="home_splash">
+    <div class="home_splash--header-wrap">
+      <h1 class="h1 home_splash--hr-heading">HARRY<span class="whitespace"> </span>RAY</h1>
+      <h2 class="h1 h1--vertical-text vertical-text home_splash--jekyll-heading">JEKYLL</h2>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    {{ content }}
+
+    {%- if site.posts.size > 0 -%}
+      <div class="posts">
+      <h2 class="posts_heading h1 h1--vertical-text vertical-text">{{ page.list_title | default: "READTHESE" }}</h2>
+      <ul class="posts_list">
+        {%- for post in site.posts -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <li class="posts_post-in-list">
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            <img src="{{ post.thumbnail }}" alt="{{ post.title }}" />
+            <h3>{{ post.title | escape }}</h3>
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
+
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    {%- endif -%}
+  </div>
+
+</div>
