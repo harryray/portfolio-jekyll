@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2019-02-05 09:41:08 +0000
+title:  "STP at Rolling Rock"
+date:   2001-08-04 09:41:08 +0000
 categories: jekyll update
-thumbnail: https://picsum.photos/500/300/?image=777
-main_image: https://picsum.photos/1920/1000/?image=777
+thumbnail: https://picsum.photos/500/300/?image=555
+main_image: https://picsum.photos/1920/1000/?image=555
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

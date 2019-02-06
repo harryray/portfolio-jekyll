@@ -6,4 +6,5 @@ layout: home
 title: Hub
 full-width: true
 no-padding: true
+type: no-header
 ---

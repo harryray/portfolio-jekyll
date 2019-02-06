@@ -1,9 +1,9 @@
 ---
 layout: page
-title: About
-permalink: /about/
-thumbnail: https://picsum.photos/800/300/?image=11
-main_image: https://picsum.photos/800/1024/?image=11
+title: Contact
+permalink: /contact/
+thumbnail: https://picsum.photos/800/300/?image=74
+main_image: https://picsum.photos/800/1024/?image=74
 ---
 
 {{ site.description }}
