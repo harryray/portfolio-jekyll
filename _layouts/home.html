@@ -12,46 +12,35 @@ layout: default
 
   <div class="wrapper">
     {{ content }}
-
     {%- if site.posts.size > 0 -%}
       <div class="posts">
-      <h2 class="posts_heading h1 h1--vertical-text vertical-text">{{ page.list_title | default: "READTHESE" }}</h2>
-      <ul class="posts_list">
-        {%- for post in site.posts -%}
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <li class="posts_post-in-list">
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            <img src="{{ post.thumbnail }}" alt="{{ post.title }}" />
-            <h3>{{ post.title | escape }}</h3>
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            {%- if site.show_excerpts -%}
-              {{ post.excerpt }}
-            {%- endif -%}
-          </a>
-        </li>
-        {%- endfor -%}
-      </ul>
-
+        <h2 class="posts_heading h1 h1--vertical-text vertical-text">{{ page.list_title | default: "READTHESE" }}</h2>
+        <ul class="posts_list">
+          {%- for post in site.posts -%}
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <li class="posts_post-in-list">
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              <img src="{{ post.thumbnail }}" alt="{{ post.title }}" />
+              <h3>{{ post.title | escape }}</h3>
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+              {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+              {%- endif -%}
+            </a>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
       <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
     {%- endif -%}
-
-    <div class="instagram">
-      <h2 class="instagram_heading h1 h1--vertical-text vertical-text">{{ page.instagram_title | default: "YOUWANTMORE?" }}</h2>
-      <div id="instafeed"></div>
-    </div>
-    <script type="text/javascript" src="{{ "assets/instafeed.js" | relative_url }}"></script>
-    <script type="text/javascript">
-        var feed = new Instafeed({
-            get: 'user',
-            userId: '586219176',
-            accessToken: '586219176.1677ed0.1a9649aa58b6485f92b6623600b72ef1',
-            clientId: 'bda72a37e219471a97e1b956e0a96de0'
-        });
-        feed.run();
-    </script>
-
+  </div>
+  <div class="instagram">
+    <h2 class="instagram_heading h1 h1--vertical-text vertical-text">{{ page.instagram_title | default: "YOUWANTMORE?" }}</h2>
+    <ul id="instafeed" class="instagram_list"></ul>
+  </div>
+  <div class="wrapper">
     <div class="pages">
-      <h2 class="pages_heading h1 h1--vertical-text vertical-text">{{ page.pages_title | default: "YOUWANTMORE?" }}</h2>
+      <h2 class="pages_heading h1 h1--vertical-text vertical-text">{{ page.pages_title | default: "PAGES" }}</h2>
       <ul class="pages_list">
         {% for page in site.pages %}
           {% if page.title %}
@@ -68,3 +57,22 @@ layout: default
   </div>
 
 </div>
+
+<script type="text/javascript" src="{{ "assets/instafeed.js" | relative_url }}"></script>
+{% assign insta_image = '{{image}}' %}
+{% assign insta_link = '{{link}}' %}
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'user',
+        userId: '586219176',
+        accessToken: '586219176.1677ed0.1a9649aa58b6485f92b6623600b72ef1',
+        clientId: 'bda72a37e219471a97e1b956e0a96de0',
+        resolution: 'standard_resolution',
+        limit: 12,
+        width:500,
+        height:500,
+        orientation:'square',
+        template: '<li class="instagram_post-in-list"><a href="{{ insta_link }}"><img src="{{ insta_image }}" /></a></li>'
+    });
+    feed.run();
+</script>

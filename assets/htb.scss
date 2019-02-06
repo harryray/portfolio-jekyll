@@ -56,11 +56,12 @@ $black: #000000;
 .home_splash {
   background:url({{ "/assets/leopard-print.jpg" | relative_url }}) center center no-repeat;
   color:white;
-  height:77vh;
+  height:75vh;
   position:relative;
   overflow:hidden;
   margin-bottom:120px;
   padding:66px 0;
+  max-height:800px;
 
   &--header-wrap {
       width: 773px;
@@ -112,7 +113,7 @@ $black: #000000;
   }
 }
 
-.posts, .pages {
+.posts, .pages, .instagram {
   position:relative;
 
   &_heading {
@@ -145,7 +146,12 @@ $black: #000000;
   }
 }
 
-.pages {
+.instagram {
+  width:70%;
+  margin-left:29%;
+  margin-bottom:120px;
+  margin-top:120px;
+
   &_heading {
     right:auto;
     left:0;
@@ -153,6 +159,30 @@ $black: #000000;
     transform:translateX(-100%);
   }
 
+  &_post-in-list {
+    width:24%;
+    margin:0 0 33px 0;
+    -webkit-transition:transform 333ms ease-in-out;
+    transition:transform 333ms ease-in-out;
+    overflow:hidden;
+    max-height:400px;
+
+    &:hover {
+      -webkit-transform:scale(1.03);
+      transform:scale(1.03);
+    }
+
+    img {
+      min-height:100%;
+      min-width:100%;
+      max-width:none;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.pages {
   &_page-in-list {
     width:100%;
     flex:none;
