@@ -1,7 +1,9 @@
 ---
 ---
-$pink:  #f273ed;
+$pink:  #e762a7;
 $blue:  #7388f2;
+$tan:   #e5b171;
+$dollar:#c9e6dc;
 $white: #ffffff;
 $black: #000000;
 
@@ -48,7 +50,7 @@ $black: #000000;
 }
 
 .home_splash {
-  background-color:$blue;
+  background:url({{ "/assets/leopard-print.jpg" | relative_url }}) center center no-repeat;
   color:white;
   height:77vh;
   position:relative;
@@ -101,7 +103,7 @@ $black: #000000;
 
   &::after {
     left:50vw;
-    border-color: $pink transparent transparent transparent;
+    border-color: $dollar transparent transparent transparent;
   }
 }
 
@@ -128,5 +130,12 @@ $black: #000000;
   &_post-in-list {
     width:48%;
     margin:0 0 33px 0;
+    -webkit-transition:transform 333ms ease-in-out;
+    transition:transform 333ms ease-in-out;
+
+    &:hover {
+      -webkit-transform:scale(1.03);
+      transform:scale(1.03);
+    }
   }
 }
