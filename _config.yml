@@ -2,8 +2,8 @@ title: Harry Ray - Jekyll Portfolio
 author: Harry Ray
 email: harry@harry-ray.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This the the Jekyll portion of my portfolio. This site is
-  built with Liquid and Sass, uses Jekyll to compile everything, using Terminal to run and test
+  This site makes up the Jekyll portion of my portfolio, I suppose. It's
+  built with Liquid and Sass (as well as HTML, obviously, and a little JS), uses Jekyll to compile everything, and I'm using Terminal to run and test
   on localhost and push up to Github. From there, it's automatically
   deployed to Netlify.
 baseurl: "" # the subpath of your site, e.g. /blog

@@ -9,7 +9,7 @@ $black: #000000;
 
 .padding-box {
   box-sizing: border-box;
-  
+
   &--small {
     padding:11px;
   }
@@ -284,7 +284,6 @@ $black: #000000;
 
 .work {
   &.two-col {
-    max-height:100vh;
     overflow:hidden;
   }
 }

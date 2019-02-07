@@ -11,6 +11,29 @@ layout: default
   </div>
 
   <div class="wrapper">
+    <div class="pages">
+      <h2 class="pages_heading h1 h1--vertical-text vertical-text">{{ page.pages_title | default: "PLACESTOSEE" }}</h2>
+      <ul class="pages_list">
+        {% for page in site.pages %}
+          {% if page.title %}
+            <li class="pages_page-in-list">
+              <a href="{{page.url}}">
+                <img src="{{ page.thumbnail }}" alt="{{ page.title }}" />
+                <p class="h3">{{page.title}}</p>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="instagram">
+    <h2 class="instagram_heading h1 h1--vertical-text vertical-text">{{ page.instagram_title | default: "YOUWANTMORE?" }}</h2>
+    <ul id="instafeed" class="instagram_list"></ul>
+  </div>
+
+  <div class="wrapper">
     {{ content }}
     {%- if site.posts.size > 0 -%}
       <div class="posts">
@@ -33,27 +56,6 @@ layout: default
       </div>
       <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
     {%- endif -%}
-  </div>
-  <div class="instagram">
-    <h2 class="instagram_heading h1 h1--vertical-text vertical-text">{{ page.instagram_title | default: "YOUWANTMORE?" }}</h2>
-    <ul id="instafeed" class="instagram_list"></ul>
-  </div>
-  <div class="wrapper">
-    <div class="pages">
-      <h2 class="pages_heading h1 h1--vertical-text vertical-text">{{ page.pages_title | default: "PLACESTOSEE" }}</h2>
-      <ul class="pages_list">
-        {% for page in site.pages %}
-          {% if page.title %}
-            <li class="pages_page-in-list">
-              <a href="{{page.permalink}}">
-                <img src="{{ page.thumbnail }}" alt="{{ page.title }}" />
-                <p class="h3">{{page.title}}</p>
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
   </div>
 
 </div>

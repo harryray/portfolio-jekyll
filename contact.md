@@ -4,6 +4,7 @@ title: Contact
 permalink: /contact/
 thumbnail: https://picsum.photos/800/300/?image=74
 main_image: https://picsum.photos/800/1024/?image=74
+nav-order: 3
 ---
 
 {{ site.description }}
