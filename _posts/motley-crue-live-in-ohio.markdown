@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2019-02-05 09:41:08 +0000
+title:  "Motley Crue - Live in Ohio"
+date:   1987-07-26 09:41:08 +0000
 categories: jekyll update
 thumbnail: https://picsum.photos/500/300/?image=619
 main_image: https://picsum.photos/1920/1000/?image=619

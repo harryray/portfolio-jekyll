@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="post two-col {{ page.title | downcase }}">
+  <div class="two-col_col">
+    <img src="{{ page.main_image | relative_url }}" />
+  </div>
+  <div class="two-col_col padding-box padding-box--large">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>

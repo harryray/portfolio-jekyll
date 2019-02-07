@@ -7,6 +7,36 @@ $dollar:#c9e6dc;
 $white: #ffffff;
 $black: #000000;
 
+.padding-box {
+  box-sizing: border-box;
+  
+  &--small {
+    padding:11px;
+  }
+  &--medium {
+    padding:33px;
+  }
+  &--large {
+    padding:66px;
+  }
+}
+
+.two-col {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &_col {
+    width:50%;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -247,6 +277,14 @@ $black: #000000;
       color:$white;
       font-size:4.44em;
       z-index:3;
+      text-align:center;
     }
+  }
+}
+
+.work {
+  &.two-col {
+    max-height:100vh;
+    overflow:hidden;
   }
 }
