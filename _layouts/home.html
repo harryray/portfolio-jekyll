@@ -40,12 +40,12 @@ layout: default
   </div>
   <div class="wrapper">
     <div class="pages">
-      <h2 class="pages_heading h1 h1--vertical-text vertical-text">{{ page.pages_title | default: "PAGES" }}</h2>
+      <h2 class="pages_heading h1 h1--vertical-text vertical-text">{{ page.pages_title | default: "PLACESTOSEE" }}</h2>
       <ul class="pages_list">
         {% for page in site.pages %}
           {% if page.title %}
             <li class="pages_page-in-list">
-              <a href="{{page.path}}">
+              <a href="{{page.permalink}}">
                 <img src="{{ page.thumbnail }}" alt="{{ page.title }}" />
                 <p class="h3">{{page.title}}</p>
               </a>
@@ -72,7 +72,7 @@ layout: default
         width:500,
         height:500,
         orientation:'square',
-        template: '<li class="instagram_post-in-list"><a href="{{ insta_link }}"><img src="{{ insta_image }}" /></a></li>'
+        template: '<li class="instagram_post-in-list"><a href="{{ insta_link }}"><img class="instagram_post-image" src="{{ insta_image }}" /></a></li>'
     });
     feed.run();
 </script>
