@@ -16,9 +16,16 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+  <form method="get" action="/search-results/" />
+  <input type="text" placeholder="search blog posts..." name="q" />
+  <input type="submit" />
+  </form>
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+  
+  <ul id="results-container"></ul>
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}

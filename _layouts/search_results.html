@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div id="results"></div>
+
+<script>
+
+	var urlParams 	= new URLSearchParams(window.location.search),
+		query 		= urlParams.get('q').toLowerCase(),
+		results 	= [],
+		resultsContainer = document.getElementById('results'),
+		posts 		= {% include search.json %};
+
+	for ( var i = posts.length - 1; i >= 0; i-- ) {
+		if( posts[i].title.toLowerCase().indexOf(query) >= 0 || posts[i].body.toLowerCase().indexOf(query) >= 0 ) {
+			results.push(`
+				<a href="` + posts[i].url + `">
+					<div class="results__card">
+						<p><strong>` + posts[i].title + `</strong></p>
+						<p>` + posts[i].body + `</p>
+					</div>
+				</a>
+			`);
+		}
+		resultsContainer.innerHTML = results.join( " " );
+	}
+
+</script>
